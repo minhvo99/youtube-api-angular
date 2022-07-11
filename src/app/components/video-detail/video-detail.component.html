@@ -1,0 +1,29 @@
+
+<div class="row" *ngFor="let item of Detail">
+    <div class="col-lg-4">
+        <div class="card-deck">
+            <div class="card">
+                <img src="{{item.snippet.thumbnails.high.url}}" >
+                <!-- <iframe src="{{URL + item.id  | View}} "
+                    title="{{item.snippet.title}}" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe> -->
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <h3>{{item.snippet.title}}</h3>
+        <h6>Channel: {{item.snippet.channelTitle}}</h6>
+        <p>Tags: {{item.snippet.tags | Tags :4}}</p>
+        <p>Mô tả: {{item.snippet.description | Description :0 :50}}</p>
+        <p>{{item.statistics.viewCount}} lượt xem</p>
+        <p>
+            <i class="fa-regular fa-thumbs-up"></i>
+            {{item.statistics.likeCount}} lượt thích
+        </p>
+        <p>
+            <i class="fa-regular fa-comment"></i>
+            {{item.statistics.commentCount}} bình luận
+        </p>
+    </div>
+</div>

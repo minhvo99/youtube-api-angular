@@ -1,0 +1,20 @@
+<div class="row mt-5 mb-5">
+    <div class="col-lg-3" *ngFor="let item of Videos">
+        <div class="card-deck" 
+            [routerLink]="['/video', item.id.videoId]" 
+            routerLinkActive="Active"
+            (click)="getVideo(item.id.videoId)"
+            >
+            <div class="card" >
+                <img class="card-img-top" [src]="item.snippet.thumbnails.high.url" alt="">
+                <div class="card-body">
+                    <p class="card-title">{{item.snippet.title | Description :0 :50}}</p>
+                    <p> Ngày phát hành: {{item.snippet.publishedAt | date: 'dd/MM/yyyy'}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-paginations></app-paginations>
+<router-outlet></router-outlet>
+
